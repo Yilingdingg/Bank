@@ -1,0 +1,30 @@
+class Bank: 
+    def __init__(self, name, ammount, currency):
+        self.name=name
+        self.ammount=ammount
+        self.currency=currency
+    def print_details(self):
+        print("You are registered under the name of", self.name,".")
+        print("You have a total ammount of", self.ammount, self.currency)
+
+person_one=Bank("Angeline","2", "$")
+person_two=Bank("Florence", "1000000","€")
+person_three=Bank("Abeline", "1234567890","¥")
+
+person_two.print_details()
+
+class Student_account(Bank):
+    def __init__(self, name, ammount, currency, guardian, age, school_level):
+        Bank.__init__(self, name, ammount, currency)
+        self.guardian=guardian
+        self.age=age
+        self.school_level=school_level
+    def print_details(self):
+        print("Your account is under the supervision of", self.guardian)
+        print("You are registered under the name of", self.name,".")
+        print("Here are some additional information: you are a", self.age, "years-old", self.school_level)
+        print("You have a total ammount of", self.ammount, self.currency)
+
+
+student_one=Student_account("Chris", "56789", "$", "Michael", "14", "sophomore")
+student_one.print_details()
